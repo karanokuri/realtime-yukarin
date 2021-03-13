@@ -11,8 +11,8 @@ class VocodeMode(Enum):
 
 
 class Config(NamedTuple):
-    input_device_name: str
-    output_device_name: str
+    input_device_index: int
+    output_device_index: int
     input_rate: int
     output_rate: int
     frame_period: float
@@ -46,8 +46,8 @@ class Config(NamedTuple):
     def from_yaml(path: Path):
         d: Dict[str, Any] = yaml.safe_load(path.open())
         return Config(
-            input_device_name=d['input_device_name'],
-            output_device_name=d['output_device_name'],
+            input_device_index=d['input_device_index'],
+            output_device_index=d['output_device_index'],
             input_rate=d['input_rate'],
             output_rate=d['output_rate'],
             frame_period=d['frame_period'],

@@ -69,11 +69,11 @@ python run.py ./config.yaml
 
 ### Description of config file
 ```yaml
-# Name of input sound device. Partial Match. Details are below.
-input_device_name: str
+# Index of input sound device. Details are below.
+input_device_index: int
 
-# Name of output sound device. Partial Match. Details are below.
-output_device_name: str
+# Index of output sound device. Details are below.
+output_device_index: int
 
 # Input sampling rate
 input_rate: int
@@ -132,8 +132,8 @@ stage2_config_path: str
 ```
 
 #### (preliminary knowledge) Name of sound device
-In the example below, `Logitech Speaker` is the name of the sound device.
-<img src='https://user-images.githubusercontent.com/4987327/59046047-2eaf9980-88bc-11e9-8732-0a7d80ef2d2e.png'>
+You can see the list of sound devices with executing `./audio_devices.py`.
+Set the `index` value for the device in question to`input_device_index` and `output_device_index`.
 
 ## License
 [MIT License](./LICENSE)

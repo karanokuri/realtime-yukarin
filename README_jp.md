@@ -67,11 +67,11 @@ python run.py ./config.yaml
 
 ### 設定ファイルの説明
 ```yaml
-# 入力サウンドデバイスの名前。部分一致。詳細は下記
-input_device_name: str
+# 入力サウンドデバイスのインデックス。詳細は下記
+input_device_index: int
 
-# 出力サウンドデバイスの名前。部分一致。詳細は下記
-output_device_name: str
+# 出力サウンドデバイスのインデックス。詳細は下記
+output_device_index: int
 
 # 入力音声サンプリングレート
 input_rate: int
@@ -123,10 +123,9 @@ stage2_model_path: str
 stage2_config_path: str
 ```
 
-#### （補足情報）サウンドデバイスの名前
-下の例だと、`Logicool Speaker`がサウンドデバイスの名前。
-
-<img src='https://user-images.githubusercontent.com/4987327/59046047-2eaf9980-88bc-11e9-8732-0a7d80ef2d2e.png'>
+#### （補足情報）サウンドデバイスのインデックス
+`./audio_devices.py`を実行して、サウンドデバイスを一覧で確認できます。
+該当するデバイスの`index`値を`input_device_index`と`output_device_index`に設定してください。
 
 ## License
 [MIT License](./LICENSE)

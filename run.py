@@ -96,28 +96,18 @@ def run(
         pass  # wait
 
     # input device
-    if config.input_device_name is None:
+    if config.input_device_index is None:
         input_device_index = audio_instance.get_default_input_device_info()['index']
 
     else:
-        for i in range(audio_instance.get_device_count()):
-            if config.input_device_name in str(audio_instance.get_device_info_by_index(i)['name']):
-                input_device_index = i
-                break
-        else:
-            raise ValueError('input device not found')
+        input_device_index = config.input_device_index
 
     # output device
-    if config.output_device_name is None:
+    if config.output_device_index is None:
         output_device_index = audio_instance.get_default_output_device_info()['index']
 
     else:
-        for i in range(audio_instance.get_device_count()):
-            if config.output_device_name in str(audio_instance.get_device_info_by_index(i)['name']):
-                output_device_index = i
-                break
-        else:
-            raise ValueError('output device not found')
+        output_device_index = config.output_device_index
 
     # audio stream
     audio_input_stream = audio_instance.open(
